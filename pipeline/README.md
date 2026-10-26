@@ -13,7 +13,7 @@
         │     （CloakBrowser 驱动，复用登录态、住宅 IP）            │
         │  2. 抽词 + 频次统计  → 找出「高频且题库里没有」的概念      │
         │  3. 按 jd_to_cards.md 写卡  →  candidates/2026-10-27.json │
-        │  4. merge_cards.py  →  写入 drill/cards.json（去重校验）   │
+        │  4. merge_cards.py  →  写入 study/cards.json（去重校验）   │
         │  5. git commit + push                                    │
         └──────────────────────────┬───────────────────────────────┘
                                    │
@@ -22,7 +22,7 @@
                          GitHub Pages 自动构建
                                    │
         ┌──────────────────────────┴───────────────────────────────┐
-        │  手机 / 平板 / 公司电脑：打开 /drill/ 就是最新题库        │
+        │  手机 / 平板 / 公司电脑：打开 /study/ 就是最新题库        │
         │  进度存在各自浏览器的 localStorage，可导出导入            │
         └──────────────────────────────────────────────────────────┘
 ```
@@ -92,7 +92,8 @@ jobs:
         run: echo "${{ secrets.BOSS_COOKIE }}" > pipeline/state/cookie.txt
       - run: xvfb-run -a python pipeline/crawl.py
       - run: python pipeline/merge_cards.py pipeline/candidates/latest.json
-      - run: git config user.name bot && git add drill/cards.json && git commit -m "cards: daily" && git push
+      # study 已独立成仓库，跨仓库推送需要 PAT，或两个仓库分别 checkout
+      - run: cd study && git config user.name bot && git add cards.json && git commit -m "cards: daily" && git push
 ```
 
 ---
@@ -101,13 +102,14 @@ jobs:
 
 ### 1. 部署（已完成）
 
-简历站已在 Pages 上，`drill/` 跟着仓库一起发布，**线上地址：**
+学习站已拆成**独立仓库** `ccccty/study`，与简历站解耦。本地目录 `E:/工作/个人简介/study/`，简历仓库已用 `.gitignore` 排除它。
 
 ```
-https://ccccty.github.io/resume/drill/
+线上地址：https://ccccty.github.io/study/
+本地仓库：E:/工作/个人简介/study/   （独立 git，remote = ccccty/study）
 ```
 
-不需要单独的构建步骤，`git push` 到 `main` 后 Pages 自己重建，通常 1–2 分钟生效（CDN 最长缓存 10 分钟）。
+不需要构建步骤，`git push` 到 `main` 后 Pages 自动重建，通常 1–2 分钟生效（CDN 最长缓存 10 分钟）。
 
 ### 2. 手机上怎么拿到每天的新卡
 
@@ -123,24 +125,34 @@ https://ccccty.github.io/resume/drill/
 
 ```
 08:40 本机自动化 → 抓 BOSS → 抽词 → 写 candidates/日期.json
-                 → merge_cards.py 入池 drill/cards.json
-                 → git push
+                 → merge_cards.py 写入 study/cards.json
+                 → cd study && git push（独立仓库）
                  → Pages 重建
-                 → 手机打开 drill 页面即读到新卡
+                 → 手机打开即读到新卡
 ```
 
 ### 3. 手机加到主屏（一次性）
 
-iOS Safari / Android Chrome 打开线上地址 → 分享 → 添加到主屏幕。之后点图标就是全屏应用，每天打开自动推 8 张。
+iOS Safari / Android Chrome 打开线上地址 → 分享 → 添加到主屏幕。现在有 `manifest.webmanifest` 和 Service Worker，加完是**真正的独立应用**（全屏、独立图标、断网可开），不再是普通书签。
 
-扫码直达（`drill/qr.png`）：
+扫码直达（`study/qr.png`）：
 
-<img src="../drill/qr.png" width="180" alt="二维码">
+<img src="../study/qr.png" width="180" alt="二维码">
 
-**两个必须知道的坑：**
+**关于「记不记得住学过没有」——这是三层保障：**
+
+| 层 | 作用 |
+|---|---|
+| `localStorage` | 主存储，同步读写，首屏不等异步 |
+| `IndexedDB` | 镜像备份，写入用单例连接 + 串行队列 |
+| `storage.persist()` | 申请持久化，降低被系统清理的概率 |
+
+清缓存导致 `localStorage` 丢失时，刷新会自动从 `IndexedDB` 恢复；已实测「评分 4 张 → 抹掉 localStorage → 刷新 → 4 张全部回来」。
+
+**两个必须知道的边界：**
 
 - **iOS 主屏图标和 Safari 标签页的存储是分开的。** 在主屏里答过的进度，用 Safari 打开同一地址看不到。选定一种方式用到底，别两边混用。
-- **iOS 会清理长期不访问站点的本地存储。** 进度在 `localStorage`，理论上 7 天不打开有被回收的风险，实际很少触发。养成每月在数据页点一次「导出进度」的习惯，换机时也用得上。
+- **两层存储同时被清就等于没存过**（换手机、清空浏览器数据、卸载重装）。养成每月在数据页点一次「导出进度」的习惯，换机时也用得上。
 
 ### 4. 首次抓取需要扫码登录
 
@@ -188,7 +200,7 @@ boss-scrape 抓 4 城 × 4 方向 → 频次统计 → 生成候选 → merge_ca
 
 ## 进度多端同步（可选项）
 
-现在进度在浏览器 `localStorage` 里，**卡片共享、进度独立**。这与 Anki 的默认体验一致，多数人够用。
+现在进度落三层（`localStorage` + `IndexedDB` 镜像 + 持久化申请），但**只在本机**：卡片共享、进度独立。这与 Anki 的默认体验一致，多数人够用。
 
 要真同步，两条路：
 
@@ -200,15 +212,36 @@ boss-scrape 抓 4 城 × 4 方向 → 频次统计 → 生成候选 → merge_ca
 ## 目录结构
 
 ```
-drill/
-  index.html          单文件应用（内置 129 张卡 + 运行时合并 cards.json）
-  cards.json          JD 新增卡，由 merge_cards.py 维护
+study/                 ← 独立仓库 ccccty/study（简历仓库已 gitignore 它）
+  index.html           单文件应用（内置 129 张卡 + 运行时合并 cards.json）
+  cards.json           JD 新增卡，由 merge_cards.py 维护
+  manifest.webmanifest PWA 清单
+  sw.js                Service Worker（cards.json 永不缓存）
+  icons/               应用图标
 pipeline/
-  config.json         城市、方向、关键词、阈值
-  jd_to_cards.md      抽词与写卡规范（人机共用）
-  merge_cards.py      合并 + 校验 + 去重
-  candidates/         每天的候选卡（YYYY-MM-DD.json）
-  raw/                抓取原始数据（可 gitignore）
+  config.json          城市、方向、关键词、阈值
+  jd_to_cards.md       抽词与写卡规范（人机共用）
+  merge_cards.py       合并 + 校验 + 去重（输出目录指向 study/）
+  make_qr.py           生成 study/qr.png
+  make_icons.py        生成 PWA 图标
+  tests/               Playwright 测试（持久化恢复 / 多宽度布局）
+  candidates/          每天的候选卡（YYYY-MM-DD.json）
+  raw/                 抓取原始数据（可 gitignore）
+```
+
+### 测试怎么跑
+
+改完 `study/index.html` 建议跑一遍，这两件事最容易悄悄坏掉：
+
+```bash
+# 先在本机起静态服务（脚本里默认 8771 端口）
+python -m http.server 8771
+
+# 持久化：评分 4 张 → 抹掉 localStorage → 刷新 → 看能否从 IndexedDB 恢复
+python pipeline/tests/test_persist.py
+
+# 布局：320/375/420 三档宽度下检查横向溢出
+python pipeline/tests/test_layout.py
 ```
 
 ---
@@ -226,13 +259,13 @@ pipeline/
 ## 常见问题
 
 **Q：手机上打开看不到新卡？**
-浏览器强缓存。页面已经加了 `?t=` 时间戳，正常情况下刷新就有。如果还是没有，检查 `cards.json` 是否真的 push 上去了（打开 `.../drill/cards.json` 直接看）。
+浏览器强缓存。页面已经加了 `?t=` 时间戳，正常情况下刷新就有。如果还是没有，检查 `cards.json` 是否真的 push 上去了（打开 `.../study/cards.json` 直接看）。
 
 **Q：本地双击 html，新卡不显示？**
 预期行为。`file://` 下浏览器禁止 fetch 本地文件，此时只读内置的 129 张。想要新卡就用 Pages 地址或起个本地服务（`python -m http.server`）。
 
 **Q：卡片加错了想删？**
-打开 `drill/cards.json` 删掉那个对象，push 即可。进度记录还留在浏览器里，无害。
+打开 `study/cards.json` 删掉那个对象，push 即可。进度记录还留在浏览器里，无害。
 
 **Q：能不能只加我感兴趣的？**
 可以。`candidates/` 里的 JSON 你随便删减，`merge_cards.py` 只认留下来的。或者给候选卡加 `"cat"` 之外的过滤逻辑。

@@ -8,8 +8,8 @@ import os
 import qrcode
 from PIL import Image, ImageDraw, ImageFont
 
-URL = "https://ccccty.github.io/resume/drill/"
-OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "drill", "qr.png")
+URL = "https://ccccty.github.io/study/"
+OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "study", "qr.png")
 
 qr = qrcode.QRCode(version=None, error_correction=qrcode.constants.ERROR_CORRECT_M, box_size=12, border=2)
 qr.add_data(URL)
@@ -35,7 +35,7 @@ except Exception:
     pass
 
 title = "工程概念 · 每日一推"
-sub = "ccccty.github.io/resume/drill"
+sub = "ccccty.github.io/study"
 if font:
     d.text(((W - d.textlength(title, font=font)) / 2, H + 18), title, fill="#1b1f2a", font=font)
 if font2:

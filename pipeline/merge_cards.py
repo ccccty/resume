@@ -23,8 +23,9 @@ import os
 import datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-HTML = os.path.join(ROOT, 'drill', 'index.html')
-JSONF = os.path.join(ROOT, 'drill', 'cards.json')
+# 站点已独立成 study 仓库（https://ccccty.github.io/study/），发布物都在这里
+HTML = os.path.join(ROOT, 'study', 'index.html')
+JSONF = os.path.join(ROOT, 'study', 'cards.json')
 
 VALID_CATS = ['sens', 'radar', 'fusion', 'est', 'mcu', 'bus',
               'deploy', 'auto', 'ml', 'embodied', 'quant', 'ros2']
