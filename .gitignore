@@ -1,0 +1,13 @@
+# 系统与工具目录（不上传）
+.workbuddy/
+*.genie
+
+# 原始素材（站点内已有副本）
+/个人照片.jpg
+/崔天一简历.pdf
+/质量协会颁奖.jpg
+
+# 系统垃圾文件
+.DS_Store
+Thumbs.db
+desktop.ini

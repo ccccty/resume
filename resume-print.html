@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>崔天一 · 简历</title>
+<style>
+  @page { size: A4; margin: 10.5mm 14mm 7.5mm; }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    color: #1a1d23;
+    font-family: "Source Han Sans SC", "Noto Sans SC", "PingFang SC",
+      "Microsoft YaHei", "Hiragino Sans GB", -apple-system, sans-serif;
+    font-size: 9.45pt;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- header ---------- */
+  header { border-bottom: 2px solid #1b4b8f; padding-bottom: 7pt; margin-bottom: 2pt; }
+
+  .hdr { display: flex; justify-content: space-between; align-items: flex-start; gap: 10pt; }
+  .hdr__text { flex: 1; min-width: 0; }
+  .hdr__side { display: flex; align-items: flex-start; gap: 7pt; flex: none; }
+  .hdr__qr { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 2.5pt; }
+  .hdr__qr img { width: 14.5mm; height: 14.5mm; display: block; }
+  .hdr__qr figcaption { font-size: 5.8pt; color: #6b7280; letter-spacing: 0.02em; white-space: nowrap; }
+  .hdr__photo {
+    width: 17mm;
+    height: 23mm;
+    object-fit: cover;
+    object-position: 50% 16%;
+    border-radius: 2pt;
+    border: 1px solid #e2e6ee;
+    flex: none;
+    margin-top: 1pt;
+  }
+
+  h1 {
+    margin: 0 0 2pt;
+    font-size: 19pt;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1.15;
+  }
+
+  .tagline {
+    margin: 0 0 4pt;
+    font-size: 9.6pt;
+    font-weight: 600;
+    color: #1b4b8f;
+    letter-spacing: 0.02em;
+  }
+
+  .contact { margin: 0; font-size: 9pt; color: #555c68; }
+  .contact span + span::before { content: "|"; margin: 0 6pt; color: #c3c9d4; }
+
+  /* ---------- sections ---------- */
+  h2 {
+    margin: 6pt 0 3pt;
+    padding-bottom: 2pt;
+    font-size: 10.6pt;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #1b4b8f;
+    border-bottom: 1px solid #dfe3ea;
+  }
+  h2:first-of-type { margin-top: 8pt; }
+
+  .item { margin-bottom: 2.8pt; }
+  .item:last-child { margin-bottom: 0; }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10pt;
+  }
+  .row .org { font-weight: 700; font-size: 10.2pt; letter-spacing: 0.01em; }
+  .row .role { color: #3f4753; font-size: 9.7pt; }
+  .row .role::before { content: "｜"; color: #c3c9d4; margin: 0 1pt; }
+  .row .date {
+    flex: none;
+    font-size: 8.9pt;
+    color: #6b7280;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .meta { margin: 1pt 0 0; font-size: 9.3pt; color: #4b525e; }
+
+  ul { margin: 2pt 0 0; padding-left: 11pt; }
+  li { margin: 0 0 0.3pt; }
+  li::marker { color: #b6bcc7; }
+
+  .skills li { margin-bottom: 1pt; }
+
+  .sub { margin-top: 3pt; padding-top: 3pt; border-top: 1px dashed #e2e6ee; }
+  .sub .subrole { font-weight: 600; font-size: 9.6pt; color: #3f4753; }
+  .skills b { color: #1a1d23; }
+
+  strong { font-weight: 700; }
+
+  .kw { color: #1b4b8f; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr">
+    <div class="hdr__text">
+      <h1>崔天一</h1>
+      <p class="tagline">算法工程师 · 具身智能 / 多模态感知融合</p>
+      <p class="contact">
+        <span>男 · 25 岁</span><span>上海</span><span>18837831302</span><span>503575179@qq.com</span>
+      </p>
+    </div>
+    <div class="hdr__side">
+      <figure class="hdr__qr">
+        <img src="assets/img/qr-site.png" alt="扫码查看在线简历">
+        <figcaption>扫码看在线版</figcaption>
+      </figure>
+      <img class="hdr__photo" src="assets/img/avatar.jpg" alt="崔天一">
+    </div>
+  </div>
+</header>
+
+<h2>教育背景</h2>
+
+<div class="item">
+  <div class="row">
+    <div><span class="org">南京航空航天大学</span><span class="role">光电信息科学与工程 · 硕士</span></div>
+    <span class="date">2023.09 – 2026.04</span>
+  </div>
+  <p class="meta">研究方向：多模态数据融合与具身智能。获授权专利 2 项、受理专利 6 项；SCI 二区论文 1 篇（IEEE）、EI 检索论文 2 篇；连续两年获一等奖学金。</p>
+</div>
+
+<div class="item">
+  <div class="row">
+    <div><span class="org">长春理工大学</span><span class="role">光电信息科学与工程 · 学士（双一流学科）</span></div>
+    <span class="date">2019.09 – 2023.06</span>
+  </div>
+  <p class="meta">研究方向：激光仿真。发表 SPIE 会议论文 1 篇。</p>
+</div>
+
+<h2>核心技能</h2>
+<ul class="skills">
+  <li><b>感知与融合：</b>激光雷达点云处理、红外 / 可见光与视觉多模态融合、mmsegmentation 语义分割、道路障碍物分割</li>
+  <li><b>规划与决策：</b>全局路径规划、局部轨迹规划、隐马尔可夫链决策优化、Transformer / LSTM 轨迹预测、端到端规划系统</li>
+  <li><b>模型与框架：</b>CNN / RNN / LSTM / Transformer / GAN、YOLOv11、PyTorch / TensorFlow</li>
+  <li><b>工程与部署：</b>Python / C++、ROS 2、昇腾 310B（Atlas DK2）与 Jetson 边缘部署、STM32 / ESP32 联调、模型轻量化与推理加速</li>
+  <li><b>科研与文档：</b>SCI / EI 论文写作、专利撰写；软件需求规格说明书与库接口定义；英文书面与口头沟通，可支持国际团队协作</li>
+</ul>
+
+<h2>工作与实习经历</h2>
+
+<div class="item">
+  <div class="row">
+    <div><span class="org">上海航天技术研究院（航天八院）</span><span class="role">算法工程师</span></div>
+    <span class="date">2026.03 – 至今</span>
+  </div>
+  <ul>
+    <li>主导多源融合算法重构，引入智能融合模块，将点云激光雷达、红外等多模态数据纳入统一处理框架；方案<strong>已通过科工局评审</strong>，单项目为客户节省成本 <strong>100 余万元</strong>，并取得正式应用证明。</li>
+    <li>完整参与项目全流程交付：申报书撰写与方案评审、模型训练、算法向硬件平台迁移、上线后的质量维护与指标跟踪。</li>
+  </ul>
+  <div class="sub">
+    <div class="row">
+      <div><span class="subrole">路径规划与系统实现（实习）</span></div>
+      <span class="date">2023.09 – 2023.12</span>
+    </div>
+    <ul>
+      <li>基于 Transformer 与 LSTM 设计目标跟踪与轨迹规划算法，解决复杂场景下的目标丢失与轨迹漂移问题；完成系统集成并在 Jetson Nano 平台优化轻量级推理，推理速度提升 <strong>40%</strong>。</li>
+    </ul>
+  </div>
+</div>
+
+<div class="item">
+  <div class="row">
+    <div><span class="org">图灵人工智能研究院</span><span class="role">算法工程师（实习）</span></div>
+    <span class="date">2025.03 – 2025.08</span>
+  </div>
+  <ul>
+    <li>主导工业检测系统的风格迁移与缺陷检测算法开发，以风格迁移扩充数据分布、增强模型跨域泛化能力，打通端到端推理；设计 OCR 与大模型融合方案，提升复杂环境下的字符识别准确率。</li>
+    <li>参与测试计划制定与执行，负责测试结果分析与技术问题闭环跟踪。</li>
+  </ul>
+</div>
+
+<div class="item">
+  <div class="row">
+    <div><span class="org">环天智慧科技有限公司</span><span class="role">算法工程师（实习）</span></div>
+    <span class="date">2024.06 – 2025.02</span>
+  </div>
+  <ul>
+    <li>负责基于点云的车辆路径规划模块开发，使用隐马尔可夫链优化决策逻辑，在复杂场景下实现高效路径选择与障碍物避让。</li>
+    <li>参与自动驾驶目标识别与轨迹预测算法（YOLOv11）开发，提升系统对动态环境的适应性与实时性，相关技术产出一项授权专利；参与软件集成、接口规范编写与系统测试。</li>
+  </ul>
+</div>
+
+
+<h2>项目经历</h2>
+
+<div class="item">
+  <div class="row">
+    <div><span class="org">FishBot 麦轮双模态机器人 v2</span><span class="role">个人项目 · 激光雷达与视觉融合跟随</span></div>
+    <span class="date">2026</span>
+  </div>
+  <ul>
+    <li>在 ROS 2 上实现激光雷达与视觉的时空对齐与融合，完成目标检测、运动状态估计与行为预测，输出跟随决策与运动控制；硬件层打通 STM32 / ESP32 主控与昇腾 310B（Atlas DK2）边缘算力，重点解决单一传感器在遮挡与光照突变下的目标丢失问题。</li>
+  </ul>
+</div>
+
+<div class="item">
+  <div class="row">
+    <div><span class="org">图灵鉴 X</span><span class="role">工业缺陷检测与 OCR 识别 · 已上线（tulegit.com/chat）</span></div>
+    <span class="date">2025.03 – 2025.08</span>
+  </div>
+  <ul>
+    <li>面向工业质检的落地产品：在目标域样本稀缺条件下用风格迁移扩充数据分布、提升缺陷检测泛化能力，并设计 OCR 与大模型融合方案，改善复杂背景下字符识别效果，实现端到端推理。</li>
+  </ul>
+</div>
+
+<h2>荣誉与科研成果</h2>
+<ul>
+  <li><strong>2026 年上海市质量协会质量技术奖（成果）三等奖</strong>（CIHF 2026 中国工业论坛 · 质量创新论坛）</li>
+  <li>授权专利 2 项、受理专利 6 项；SCI 二区论文 1 篇（IEEE）、EI 检索论文 2 篇、SPIE 会议论文 1 篇</li>
+</ul>
+
+</body>
+</html>
