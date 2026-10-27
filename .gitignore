@@ -5,6 +5,9 @@
 # 独立的学习站（自己的 git 仓库，单独推送到 ccccty/study）
 /study/
 
+# 站点根跳转仓库（独立仓库，单独推送到 ccccty.github.io）
+/_root/
+
 # 原始素材（站点内已有副本）
 /个人照片.jpg
 /崔天一简历.pdf
