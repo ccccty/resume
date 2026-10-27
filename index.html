@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>崔天一 · 算法工程师 | 具身智能 · 多模态感知融合</title>
-<meta name="description" content="崔天一，南京航空航天大学光电信息科学与工程硕士，算法工程师。专注多模态感知融合、目标跟踪与自主决策，现于航天八院主导多源融合算法重构。">
+<title>崔天一 · 算法工程师 | 国产算力约束下的边缘感知智能体</title>
+<meta name="description" content="崔天一，南京航空航天大学光电信息科学与工程硕士，算法工程师。主线是国产算力约束下的多模态感知与约束驱动编排，现于航天八院主导多源融合算法重构，单项目节省成本 100 余万元。">
 <meta name="author" content="崔天一">
 <meta property="og:title" content="崔天一 · 算法工程师">
-<meta property="og:description" content="多模态感知融合 · 目标跟踪与行为预测 · 具身智能与自动驾驶决策">
+<meta property="og:description" content="国产算力约束下的感知编排 · 多模态融合 · 具身智能与自主决策">
 <meta property="og:type" content="profile">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/avatar-32.png">
+<link rel="apple-touch-icon" href="assets/img/avatar-180.png">
 <link rel="stylesheet" href="assets/css/style.css">
 <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
@@ -33,6 +35,7 @@
       <li><a href="#projects">项目</a></li>
       <li><a href="#education">教育</a></li>
       <li><a href="#skills">技能</a></li>
+      <li><a href="#opensource">开源</a></li>
       <li><a href="#honors">荣誉</a></li>
       <li><a href="#contact">联系</a></li>
       <li><a class="nav__lang" href="en/index.html" hreflang="en">EN</a></li>
@@ -46,10 +49,10 @@
   <section class="hero">
     <div class="wrap hero__inner">
       <div>
-        <p class="hero__eyebrow">算法工程师 · 具身智能 / 感知融合</p>
+        <p class="hero__eyebrow">算法工程师 · 国产算力约束下的边缘感知智能体</p>
         <h1 class="hero__name">崔天一<small>Cui Tianyi</small></h1>
         <p class="hero__role">
-          光电信息科学与工程硕士，做<strong>多模态感知融合与自主决策</strong>。现于航天八院主导多源融合算法重构，单项目节省成本 <strong>100 余万元</strong>；从感知、预测到规划，完整走过自动驾驶到具身智能的落地闭环。
+          光电信息科学与工程硕士。主线只有一条：<strong>在国产算力的硬约束下，把多模态感知做成能交付的闭环</strong>——技能级解耦替代权重级稀疏，把「少算」做在算子调度层而不是模型层。现于航天八院主导多源融合算法重构，单项目为客户节省成本 <strong>100 余万元</strong>。
         </p>
 
         <ul class="hero__meta">
@@ -96,16 +99,19 @@
       <div class="about">
         <div class="about__text reveal">
           <p>
-            光电信息科学与工程硕士，研究方向为<strong>多模态数据融合与具身智能</strong>。在航天八院主导多源融合算法重构，方案<strong>已通过科工局评审</strong>，单项目节省成本 <strong>100 余万元</strong>，并有正式应用证明。
+            我做的多数是同一道题的不同形态：<strong>算力不够、传感器各说各话、现场环境又脏又吵</strong>，怎么仍把「感知 → 判别 → 决策」在毫秒级闭环里跑完。答案不是堆更大的模型，而是把任务拆成可独立调度、可异构部署的<strong>感知技能</strong>，再按资源与精度约束做编排——这样既能少算，也能让 DSP 跑 ARM 核、卷积跑 NPU。
           </p>
           <p>
-            完整参与项目从 0 到 1 的交付链路：<strong>申报书撰写与方案评审 → 模型训练 → 算法向硬件平台迁移 → 上线后的质量维护与指标跟踪</strong>。此前在环天智慧、图灵人工智能研究院，完成了感知、预测到规划的工程闭环；累计授权专利 2 项、受理 6 项，SCI 二区论文 1 篇、EI 检索 2 篇。
+            在航天八院，我主导的多源融合算法重构<strong>已通过科工局评审</strong>，单项目节省成本 <strong>100 余万元</strong>，有正式应用证明；也完整走完了<strong>申报书 → 方案评审 → 模型训练 → 算法向硬件迁移 → 上线后质量维护</strong>这条交付链。此前在环天智慧、图灵人工智能研究院，补齐了感知、预测到规划的工程闭环。累计授权专利 2 项、受理 6 项，SCI 二区论文 1 篇、EI 检索 2 篇。
+          </p>
+          <p>
+            工作之外，我把踩过的坑沉淀成可复用的工具并开源：<strong>科研申报书技能包</strong>（军工与国家级项目，带机械合规自检）、<strong>岗位驱动的知识库流水线</strong>（抓岗位 → 抽概念 → 每日增量）。
           </p>
         </div>
 
         <aside class="facts reveal">
           <dl>
-            <div class="facts__row"><dt>关注方向</dt><dd>具身智能 · 感知融合</dd></div>
+            <div class="facts__row"><dt>技术主线</dt><dd>国产算力 · 边缘感知编排</dd></div>
             <div class="facts__row"><dt>现任</dt><dd>航天八院 · 算法工程师</dd></div>
             <div class="facts__row"><dt>学历</dt><dd>硕士 · 2026 届</dd></div>
             <div class="facts__row"><dt>常驻城市</dt><dd>上海</dd></div>
@@ -387,6 +393,16 @@
         </div>
 
         <div>
+          <p class="skill__label">方法与工程化</p>
+          <ul class="skill__list">
+            <li>技能级解耦与约束驱动编排</li>
+            <li>稠密部署与算法—算子—调度协同</li>
+            <li>数据闭环与自动化测评集</li>
+            <li>技能包 / 流水线设计（SKILL 生态）</li>
+          </ul>
+        </div>
+
+        <div>
           <p class="skill__label">科研与文档</p>
           <ul class="skill__list">
             <li>SCI / EI 论文写作</li>
@@ -403,6 +419,64 @@
             <li>英文（书面 / 口头，可支持国际协作）</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 开源 ======================= -->
+  <section class="section section--alt" id="opensource">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="section__kicker">Open Source</span>
+        <h2 class="section__title">开源作品</h2>
+        <p class="section__desc">把重复踩过的坑做成工具，公开可复现——可以点进去看代码，而不只是相信我写的这段话。</p>
+      </div>
+
+      <div class="projects">
+        <article class="card reveal">
+          <div class="card__top">
+            <span class="tag">MIT · 技能包</span>
+            <span class="card__date">2026</span>
+          </div>
+          <h3 class="card__title">
+            <a href="https://github.com/ccccty/proposal-generator-cn" target="_blank" rel="noopener">proposal-generator-cn：科研申报书技能包</a>
+          </h3>
+          <p class="card__desc">
+            面向军工科研计划与国家级项目的申报书撰写技能：正文文体零元信息、指标自带基线论证、不确定项全部剥离到随附清单。随包三件可执行工具——文体合规自检、Markdown 转 Word、Word 结构校验，让「写得好不好」变成可执行的检查项。
+          </p>
+          <div class="card__stack">
+            <span class="chip">SKILL 技能包</span>
+            <span class="chip">机械合规自检</span>
+            <span class="chip">MD → DOCX</span>
+            <span class="chip">OMML 公式</span>
+          </div>
+          <div class="card__links">
+            <a href="https://github.com/ccccty/proposal-generator-cn" target="_blank" rel="noopener">查看仓库 →</a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__top">
+            <span class="tag">GitHub Pages · 在线</span>
+            <span class="card__date">2026</span>
+          </div>
+          <h3 class="card__title">
+            <a href="https://ccccty.github.io/study/" target="_blank" rel="noopener">岗位驱动的工程概念卡片站</a>
+          </h3>
+          <p class="card__desc">
+            每天自动抓取目标城市与方向的岗位 JD，从中抽取高频工程概念、按「岗位场景 · 原理 · 工程用法 · 易踩的坑」写卡，再按 SM-2 间隔重复推送给手机。抓取留在本地、云端只做存储分发，卡片数据由 git 提交驱动每日更新。
+          </p>
+          <div class="card__stack">
+            <span class="chip">岗位 → 概念</span>
+            <span class="chip">SM-2 间隔重复</span>
+            <span class="chip">自动化流水线</span>
+            <span class="chip">PWA</span>
+          </div>
+          <div class="card__links">
+            <a href="https://ccccty.github.io/study/" target="_blank" rel="noopener">在线使用 →</a>
+            <a href="https://github.com/ccccty/study" target="_blank" rel="noopener">查看仓库 →</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -436,9 +510,9 @@
   <!-- ======================= 联系 ======================= -->
   <section class="contact" id="contact">
     <div class="wrap">
-      <h2 class="contact__title">聊聊具身智能？</h2>
+      <h2 class="contact__title">聊聊国产算力上的感知？</h2>
       <p class="contact__desc">
-        我常驻上海，关注具身智能、机器人感知融合与自主导航方向的算法岗位，也欢迎纯粹的技术交流。邮件通常当天回复。
+        我常驻上海，关注边缘感知、具身智能与自主导航方向的算法岗位。如果你也在做「算力不够但场景不能降级」的题，欢迎交流——邮件通常当天回复。
       </p>
 
       <div class="contact__actions">

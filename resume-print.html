@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>崔天一 · 简历</title>
 <style>
-  @page { size: A4; margin: 10.5mm 14mm 7.5mm; }
+  @page { size: A4; margin: 9.5mm 13mm 6mm; }
 
   * { box-sizing: border-box; }
 
@@ -13,8 +13,8 @@
     color: #1a1d23;
     font-family: "Source Han Sans SC", "Noto Sans SC", "PingFang SC",
       "Microsoft YaHei", "Hiragino Sans GB", -apple-system, sans-serif;
-    font-size: 9.45pt;
-    line-height: 1.5;
+    font-size: 9.1pt;
+    line-height: 1.38;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -59,7 +59,7 @@
 
   /* ---------- sections ---------- */
   h2 {
-    margin: 6pt 0 3pt;
+    margin: 4pt 0 2pt;
     padding-bottom: 2pt;
     font-size: 10.6pt;
     font-weight: 700;
@@ -69,7 +69,7 @@
   }
   h2:first-of-type { margin-top: 8pt; }
 
-  .item { margin-bottom: 2.8pt; }
+  .item { margin-bottom: 1.8pt; }
   .item:last-child { margin-bottom: 0; }
 
   .row {
@@ -91,8 +91,8 @@
 
   .meta { margin: 1pt 0 0; font-size: 9.3pt; color: #4b525e; }
 
-  ul { margin: 2pt 0 0; padding-left: 11pt; }
-  li { margin: 0 0 0.3pt; }
+  ul { margin: 1.5pt 0 0; padding-left: 11pt; }
+  li { margin: 0 0 0.1pt; }
   li::marker { color: #b6bcc7; }
 
   .skills li { margin-bottom: 1pt; }
@@ -112,7 +112,7 @@
   <div class="hdr">
     <div class="hdr__text">
       <h1>崔天一</h1>
-      <p class="tagline">算法工程师 · 具身智能 / 多模态感知融合</p>
+      <p class="tagline">算法工程师 · 国产算力约束下的边缘感知智能体</p>
       <p class="contact">
         <span>男 · 25 岁</span><span>上海</span><span>18837831302</span><span>503575179@qq.com</span>
       </p>
@@ -151,6 +151,7 @@
   <li><b>规划与决策：</b>全局路径规划、局部轨迹规划、隐马尔可夫链决策优化、Transformer / LSTM 轨迹预测、端到端规划系统</li>
   <li><b>模型与框架：</b>CNN / RNN / LSTM / Transformer / GAN、YOLOv11、PyTorch / TensorFlow</li>
   <li><b>工程与部署：</b>Python / C++、ROS 2、昇腾 310B（Atlas DK2）与 Jetson 边缘部署、STM32 / ESP32 联调、模型轻量化与推理加速</li>
+  <li><b>方法与工程化：</b>技能级解耦与约束驱动编排、算法—算子—调度协同优化、数据闭环与自动化测评集、Skill 技能包与流水线设计</li>
   <li><b>科研与文档：</b>SCI / EI 论文写作、专利撰写；软件需求规格说明书与库接口定义；英文书面与口头沟通，可支持国际团队协作</li>
 </ul>
 
@@ -207,7 +208,7 @@
     <span class="date">2026</span>
   </div>
   <ul>
-    <li>在 ROS 2 上实现激光雷达与视觉的时空对齐与融合，完成目标检测、运动状态估计与行为预测，输出跟随决策与运动控制；硬件层打通 STM32 / ESP32 主控与昇腾 310B（Atlas DK2）边缘算力，重点解决单一传感器在遮挡与光照突变下的目标丢失问题。</li>
+    <li>ROS 2 上实现激光雷达与视觉的时空对齐与融合，完成目标检测、状态估计与行为预测并输出跟随控制；打通 STM32 / ESP32 主控与昇腾 310B（Atlas DK2）边缘算力，解决单传感器在遮挡与光照突变下的目标丢失。</li>
   </ul>
 </div>
 
@@ -218,6 +219,26 @@
   </div>
   <ul>
     <li>面向工业质检的落地产品：在目标域样本稀缺条件下用风格迁移扩充数据分布、提升缺陷检测泛化能力，并设计 OCR 与大模型融合方案，改善复杂背景下字符识别效果，实现端到端推理。</li>
+  </ul>
+</div>
+
+<h2>开源作品</h2>
+
+<div class="item">
+  <div class="row">
+    <div><span class="org">proposal-generator-cn</span><span class="role">科研申报书技能包 · github.com/ccccty/proposal-generator-cn</span></div>
+  </div>
+  <ul>
+    <li>面向军工与国家级项目申报的撰写技能：文体合规自检、Markdown 转 Word、Word 结构校验三件可执行工具，把「写得好不好」变成可运行的检查项。</li>
+  </ul>
+</div>
+
+<div class="item">
+  <div class="row">
+    <div><span class="org">岗位驱动的工程概念卡片站</span><span class="role">在线 · ccccty.github.io/study</span></div>
+  </div>
+  <ul>
+    <li>每日抓取目标城市与方向岗位 JD，抽取高频工程概念并按「岗位场景 · 原理 · 工程用法 · 踩坑」成卡，SM-2 间隔重复推送；抓取留在本地，云端只做存储分发。</li>
   </ul>
 </div>
 

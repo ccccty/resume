@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cui Tianyi · Algorithm Engineer | Embodied AI · Multimodal Perception</title>
-<meta name="description" content="Cui Tianyi, M.S. in Optoelectronic Information Science and Engineering. Algorithm engineer working on multimodal sensor fusion, object tracking, behavior prediction and autonomous decision-making.">
+<title>Cui Tianyi · Algorithm Engineer | Edge Perception Agents Under Domestic-Compute Constraints</title>
+<meta name="description" content="Cui Tianyi, M.S. in Optoelectronic Information Science and Engineering. Algorithm engineer working on constrained edge perception and skill-level orchestration under domestic NPU constraints.">
 <meta name="author" content="Cui Tianyi">
 <meta property="og:title" content="Cui Tianyi · Algorithm Engineer">
 <meta property="og:description" content="Multimodal perception fusion · Object tracking & behavior prediction · Embodied AI and autonomous driving">
 <meta property="og:type" content="profile">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/avatar-32.png">
+<link rel="apple-touch-icon" href="../assets/img/avatar-180.png">
 <link rel="stylesheet" href="../assets/css/style.css">
 <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
@@ -32,6 +34,7 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#skills">Skills</a></li>
+      <li><a href="#opensource">Open Source</a></li>
       <li><a href="#honors">Honors</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a class="nav__lang" href="../index.html" hreflang="zh-CN">中文</a></li>
@@ -44,10 +47,10 @@
   <section class="hero">
     <div class="wrap hero__inner">
       <div>
-        <p class="hero__eyebrow">Algorithm Engineer · Embodied AI / Sensor Fusion</p>
+        <p class="hero__eyebrow">Algorithm Engineer · Edge Perception under Compute Constraints</p>
         <h1 class="hero__name">Cui Tianyi<small>崔天一</small></h1>
         <p class="hero__role">
-          M.S. in Optoelectronic Information Science and Engineering, working on <strong>multimodal sensor fusion and autonomous decision-making</strong>. I currently lead a multi-source fusion refactor at SAST (8th Academy of CASC), saving <strong>over ¥1M</strong> on a single project — a full loop from perception and prediction to planning, now extended into embodied AI.
+          M.S. in Optoelectronic Information Science and Engineering. One throughline: <strong>making multimodal perception deliverable under a hard domestic-compute ceiling</strong> — skill-level decomposition instead of weight-level sparsity, moving the "compute less" decision down to the operator-scheduling layer. I currently lead a multi-source fusion refactor at SAST (8th Academy of CASC), saving <strong>over ¥1M</strong> on a single project.
         </p>
 
         <ul class="hero__meta">
@@ -93,16 +96,19 @@
       <div class="about">
         <div class="about__text reveal">
           <p>
-            M.S. in Optoelectronic Information Science and Engineering, researching <strong>multimodal data fusion and embodied AI</strong>. At SAST I lead a multi-source fusion algorithm refactor — the approach has <strong>passed review by SASTIND</strong>, the national defence industry regulator — saving over <strong>¥1M</strong> on a single project, backed by an official application certificate.
+            Most of what I build is the same problem in different shapes: <strong>not enough compute, sensors that disagree, and a messy environment</strong> — yet the perception → discrimination → decision loop still has to close in milliseconds. The answer isn't a bigger model. It's splitting the task into <strong>independently schedulable perception skills</strong> with heterogeneous deployment targets, then orchestrating them against resource and accuracy constraints — so you pay for less compute, and a DSP can run on the ARM core while convolutions run on the NPU.
           </p>
           <p>
-            I've followed a project's full delivery chain end to end: <strong>proposal writing and design review → model training → migrating algorithms onto hardware → post-launch quality maintenance and metric tracking</strong>. Earlier, at Huantian Smart Technology and the Turing AI Research Institute, I completed the perception-to-planning loop. I hold 2 granted and 6 pending patents, one SCI Q2 paper and two EI-indexed papers.
+            At SAST, the multi-source fusion refactor I lead has <strong>passed review by SASTIND</strong>, the national defence-industry regulator, saving over <strong>¥1M</strong> on a single project with an official application certificate. I also followed the full delivery chain end to end: <strong>proposal → design review → model training → migrating algorithms onto hardware → post-launch quality maintenance</strong>. Earlier, at Huantian Smart Technology and the Turing AI Research Institute, I completed the perception-to-planning loop. I hold 2 granted and 6 pending patents, one SCI Q2 paper and two EI-indexed papers.
+          </p>
+          <p>
+            Outside work I turn hard-won lessons into reusable, open-source tooling: a <strong>research-proposal skill pack</strong> for defence and national programmes with built-in mechanical compliance checks, and a <strong>job-driven knowledge pipeline</strong> that scrapes postings, extracts concepts, and ships daily increments.
           </p>
         </div>
 
         <aside class="facts reveal">
           <dl>
-            <div class="facts__row"><dt>Focus</dt><dd>Embodied AI · Sensor fusion</dd></div>
+            <div class="facts__row"><dt>Core thesis</dt><dd>Domestic compute · Edge orchestration</dd></div>
             <div class="facts__row"><dt>Current role</dt><dd>Algorithm Engineer, 8th Academy of CASC</dd></div>
             <div class="facts__row"><dt>Education</dt><dd>M.S. · Class of 2026</dd></div>
             <div class="facts__row"><dt>Based in</dt><dd>Shanghai, China</dd></div>
@@ -380,6 +386,16 @@
         </div>
 
         <div>
+          <p class="skill__label">Methods &amp; Engineering</p>
+          <ul class="skill__list">
+            <li>Skill-level decomposition &amp; constrained orchestration</li>
+            <li>Algorithm–operator–scheduling co-design</li>
+            <li>Data loops &amp; automated eval sets</li>
+            <li>Skill-pack / pipeline design</li>
+          </ul>
+        </div>
+
+        <div>
           <p class="skill__label">Research &amp; Documentation</p>
           <ul class="skill__list">
             <li>SCI / EI paper writing</li>
@@ -396,6 +412,63 @@
             <li>English (written &amp; spoken, comfortable in international teams)</li>
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="opensource">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="section__kicker">Open Source</span>
+        <h2 class="section__title">Open source</h2>
+        <p class="section__desc">Turning repeated lessons into tooling — public and reproducible, so you can read the code instead of taking my word for it.</p>
+      </div>
+
+      <div class="projects">
+        <article class="card reveal">
+          <div class="card__top">
+            <span class="tag">MIT · Skill pack</span>
+            <span class="card__date">2026</span>
+          </div>
+          <h3 class="card__title">
+            <a href="https://github.com/ccccty/proposal-generator-cn" target="_blank" rel="noopener">proposal-generator-cn: a research-proposal skill pack</a>
+          </h3>
+          <p class="card__desc">
+            A writing skill for defence research programmes and national funding applications: prose with zero meta-noise, every metric carrying its own baseline argument, and all remaining uncertainty pushed into an attached checklist. Ships with three executable tools — style/compliance linting, Markdown to Word, and Word structure verification — so "is this proposal sound" becomes a check you can actually run.
+          </p>
+          <div class="card__stack">
+            <span class="chip">SKILL format</span>
+            <span class="chip">Compliance lint</span>
+            <span class="chip">MD → DOCX</span>
+            <span class="chip">Native OMML</span>
+          </div>
+          <div class="card__links">
+            <a href="https://github.com/ccccty/proposal-generator-cn" target="_blank" rel="noopener">View repository →</a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__top">
+            <span class="tag">GitHub Pages · Live</span>
+            <span class="card__date">2026</span>
+          </div>
+          <h3 class="card__title">
+            <a href="https://ccccty.github.io/study/" target="_blank" rel="noopener">Job-driven engineering concept library</a>
+          </h3>
+          <p class="card__desc">
+            Every day a pipeline scrapes job postings for target cities and domains, extracts the high-frequency engineering concepts, and writes them up as cards — job context, principle, how it is used in practice, and the pitfalls. Cards then arrive on a phone via SM-2 spaced repetition. Scraping stays local; the cloud only stores and distributes; daily updates are git-commit driven.
+          </p>
+          <div class="card__stack">
+            <span class="chip">Job → concept</span>
+            <span class="chip">SM-2 spaced repetition</span>
+            <span class="chip">Automated pipeline</span>
+            <span class="chip">PWA</span>
+          </div>
+          <div class="card__links">
+            <a href="https://ccccty.github.io/study/" target="_blank" rel="noopener">Open the app →</a>
+            <a href="https://github.com/ccccty/study" target="_blank" rel="noopener">View repository →</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -427,9 +500,9 @@
 
   <section class="contact" id="contact">
     <div class="wrap">
-      <h2 class="contact__title">Talking embodied AI?</h2>
+      <h2 class="contact__title">Working on perception under a compute ceiling?</h2>
       <p class="contact__desc">
-        I'm based in Shanghai and interested in algorithm roles in embodied AI, robot perception fusion and autonomous navigation. Always happy to talk shop too — I usually reply the same day.
+        I'm based in Shanghai and interested in algorithm roles in edge perception, embodied AI and autonomous navigation. If you're solving "the compute budget is small but the scenario can't degrade", let's talk — I usually reply the same day.
       </p>
 
       <div class="contact__actions">
